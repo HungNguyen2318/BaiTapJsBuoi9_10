@@ -124,7 +124,7 @@
 						<div class="row mb-3">
 							<div class="col">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Loại nhân viên" id="searchName">
+									<input type="text" oninput="searchNhanVien()" class="form-control" placeholder="Loại nhân viên" id="searchName">
 									<div class="input-group-prepend">
 										<span class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
 									</div>
@@ -252,7 +252,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
 								</div>
-								<input type="text" name="luongCB" id="luongCB" class="form-control input-sm"
+								<input type="number" name="luongCB" id="luongCB" class="form-control input-sm"
 									placeholder="Lương cơ bản">
 							</div>
 							<span class="sp-thongbao" id="tbLuongCB"></span>
@@ -263,10 +263,10 @@
 									<span class="input-group-text"><i class="fa fa-briefcase"></i></span>
 								</div>
 								<select class="form-control" id="chucvu">
-									<option>Chọn chức vụ</option>
-									<option>Sếp</option>
-									<option>Trưởng phòng</option>
-									<option>Nhân viên</option>
+									<option value="">Chọn chức vụ</option>
+									<option value="Sếp">Sếp</option>
+									<option value="Trưởng Phòng">Trưởng phòng</option>
+									<option value="Nhân Viên">Nhân viên</option>
 								</select>
 							</div>
 
@@ -277,7 +277,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
 								</div>
-								<input type="text" name="gioLam" id="gioLam" class="form-control input-sm"
+								<input type="number" name="gioLam" id="gioLam" class="form-control input-sm"
 									placeholder="Giờ làm">
 							</div>
 							<span class="sp-thongbao" id="tbGiolam"></span>
@@ -288,8 +288,8 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
-					<button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
+					<button id="btnThemNV" onclick="themNhanVien()" type="button" class="btn btn-success">Thêm người dùng</button>
+					<button id="btnCapNhat" onclick="capNhatNhanVien()" class="btn btn-success">Cập nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
@@ -324,6 +324,10 @@
 			});
 		});
 	</script>
+	<script src="./js/Models/NhanVien.js"></script>
+	<script src="./js/Ultility/ultility.js"></script>
+	<script src="./js/Ultility/validaion.js"></script>
+	<script src="./js/index.js"></script>
 </body>
 
 </html>
