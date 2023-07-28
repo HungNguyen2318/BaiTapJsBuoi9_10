@@ -22,7 +22,10 @@ var arrAttributiesNhanVien = [
 //mảng chứa danh sách nhân viên
 var arrNhanVien = [];
 //gọi hàm lấy dữ liệu local khi khởi chạy
-arrNhanVien = getDataLocal('arrNhanVien');
+arrNhanVienLocal = getDataLocal('arrNhanVien');
+if (arrNhanVienLocal) {
+    arrNhanVien = arrNhanVienLocal;
+}
 console.log(`>>> Mảng nhân viên lấy từ local: `,arrNhanVien);
 renderContentTable(arrNhanVien,arrAttributiesNhanVien,'tableDanhSach');
 //thêm nhân viên
